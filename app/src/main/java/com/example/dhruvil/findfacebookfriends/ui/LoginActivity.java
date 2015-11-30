@@ -1,4 +1,4 @@
-package com.example.dhruvil.findfacebookfriends;
+package com.example.dhruvil.findfacebookfriends.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.dhruvil.findfacebookfriends.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -28,13 +29,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle("Login");
+      //  getSupportActionBar().setTitle("Login");
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton)findViewById(R.id.login_button);
        // loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday, user_friends"));
         loginButton.setReadPermissions(Arrays.asList("public_profile, email"));
-
-
 
         // Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
